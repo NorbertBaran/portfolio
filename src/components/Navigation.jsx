@@ -53,9 +53,8 @@ const Navigation = () => {
                                 <Typography display='inline' color='primary' fontWeight='500'> /&gt;</Typography>
                             </Typography>
                             <NavLink label='Home' href='#home'/>
-                            <NavLink label='About' href='#about'/>
                             <NavLink label='Skills' href='#skills'/>
-                            <NavLink label='Qualification' href='#qualification'/>
+                            <NavLink label='Experience' href='#experience'/>
                             <NavLink label='Projects' href='#projects'/>
                             <NavLink label='Contact' href='#contact'/>
                         </Toolbar>

@@ -1,5 +1,5 @@
 import {Footer, Navigation} from "./components";
-import {About, Contact, Home, Projects, Qualification, Skills} from "./views";
+import {Contact, Home, Projects, Qualification, Skills} from "./views";
 import {Container, createTheme, ThemeProvider, Typography} from "@mui/material";
 import {indigo} from "@mui/material/colors";
 
@@ -16,7 +16,6 @@ function App() {
             <Container maxWidth='md'>
                 <Navigation/>
                 <Home/>
-                <About/>
                 <Skills/>
                 <Qualification/>
                 <Projects/>

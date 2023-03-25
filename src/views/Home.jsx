@@ -7,8 +7,8 @@ const Home = () => {
     return (
         <Grid id='home' container height='100vh'>
             <Grid xs={2} display='flex' flexDirection='column' justifyContent='center' alignItems='center' gap='15px'>
-                <LinkedIn fontSize='large' sx={{color: theme.palette.primary.contrastText}}/>
-                <GitHub fontSize='large' sx={{color: theme.palette.primary.contrastText}}/>
+                <LinkedIn fontSize='large' sx={{color: theme.palette.secondary.contrastText}}/>
+                <GitHub fontSize='large' sx={{color: theme.palette.secondary.contrastText}}/>
             </Grid>
             <Grid xs={5} display='flex' flexDirection='column' justifyContent='center'>
                 <Typography variant='h3'>
