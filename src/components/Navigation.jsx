@@ -1,8 +1,6 @@
 import {
     AppBar,
-    Box,
     Container,
-    CssBaseline,
     Link,
     Toolbar,
     Typography,
@@ -17,6 +15,7 @@ const NavLink = ({label, href}) => {
         <Link
             href={href}
             variant='subtitle1'
+            fontWeight={500}
             color='inherit'
             underline='none'
             margin='10px'
@@ -36,7 +35,7 @@ function ElevationScroll({children}) {
 
     return cloneElement(children, {
         elevation: 0,
-        style: trigger ? {boxShadow: '0px 1px 1px 0px #eee'} : {}
+        style: trigger ? {boxShadow: '0px 1px 1px 0px #ddd'} : {}
     });
 }
 
@@ -47,10 +46,10 @@ const Navigation = () => {
                 <AppBar color='secondary'>
                     <Container maxWidth='lg'>
                         <Toolbar sx={{padding: '15px'}}>
-                            <Typography variant='subtitle1' sx={{ flexGrow: 1 }}>
-                                <Typography display='inline' color='primary' fontWeight='500'>&lt; Norbert </Typography>
+                            <Typography variant='h6' sx={{ flexGrow: 1 }}>
+                                <Typography variant='h6' display='inline' color='primary' fontWeight='500'>&lt; Norbert </Typography>
                                     Baran
-                                <Typography display='inline' color='primary' fontWeight='500'> /&gt;</Typography>
+                                <Typography variant='h6' display='inline' color='primary' fontWeight='500'> /&gt;</Typography>
                             </Typography>
                             <NavLink label='Home' href='#home'/>
                             <NavLink label='Skills' href='#skills'/>
