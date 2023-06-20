@@ -1,0 +1,18 @@
+version: '3'
+services:
+  
+  portfolio-client:
+    image: portfolio-client
+    container_name: portfolio-client
+    build:
+      context: client
+      args:
+        - CONFIG=${CLIENT_CONFIG}
+      dockerfile: Dockerfile
+    ports:
+      - ${CLIENT_PORT}:80
+    networks:
+      - portfolio
+
+networks:
+  portfolio:

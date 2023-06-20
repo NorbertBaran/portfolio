@@ -1,4 +1,5 @@
-import {Box, Grid, Step, StepContent, StepLabel, Stepper, Typography} from "@mui/material";
+import { Box, Container, Grid, Step, StepLabel, Stepper, Typography } from "@mui/material";
+import Title from "../components/Title";
 
 const steps = [
     {
@@ -17,32 +18,20 @@ const steps = [
 ];
 
 const Experience = () => {
-    return(
+    return (
         <Box id='experience' height='100vh' display='flex' flexDirection='column' justifyContent='center'>
             <Grid container display='flex' justifyContent='center'>
                 <Grid xs={12}>
-                    <Typography variant='h4' marginBottom='30px'>
-                        <Typography variant='h4' display='inline' color='primary' fontWeight='500'>&lt; </Typography>
-                        EXPERIENCE
-                        <Typography variant='h4' display='inline' color='primary' fontWeight='500'> /&gt;</Typography>
-                    </Typography>
+                    <Title>EXPERIENCE</Title>
                 </Grid>
-                <Grid xs={12}>
+                <Grid maxWidth='sm'>
                     <Stepper activeStep={2} orientation="vertical">
                         {steps.map((step, index) => (
                             <Step key={step.label}>
-                                <StepLabel
-                                    optional={
-                                        index === 2 ? (
-                                            <Typography variant="caption">Last step</Typography>
-                                        ) : null
-                                    }
-                                >
-                                    {step.label}
+                                <StepLabel>
+                                    <Typography variant="subtitle1" fontWeight={500}>{step.label}</Typography>
+                                    <Typography variant="body2">{step.description}</Typography>
                                 </StepLabel>
-                                <StepContent>
-                                    <Typography>{step.description}</Typography>
-                                </StepContent>
                             </Step>
                         ))}
                     </Stepper>
