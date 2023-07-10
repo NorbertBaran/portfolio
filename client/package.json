@@ -16,7 +16,8 @@
     "@norbertbaran/react-components": "^0.0.0-dev1",
     "@types/node": "^20.3.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-full-page": "^0.1.12"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

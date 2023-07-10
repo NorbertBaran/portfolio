@@ -8,7 +8,7 @@ const repositories = [{
     color: '#3F51B5',
     description: 'Natural sounding text to speech synthesis',
     github: 'https://github.com/NorbertBaran/speaker',
-    preview: 'http://3.68.78.96/speaker/'
+    preview: 'http://quecto.pl/speaker/'
 }, {
     name: 'GitHub Manager',
     language: 'Bash',
@@ -28,14 +28,14 @@ const repositories = [{
     color: '#503a92',
     description: 'Ardigen - bioinformatics company recruitment task',
     github: 'https://github.com/NorbertBaran/ardigen-github-search',
-    preview: 'http://3.68.78.96/ardigen-github-search/'
+    preview: 'http://quecto.pl/ardigen-github-search/'
 }, {
     name: 'HexOcean Dishes',
     language: 'React',
     color: '#2BB7E2',
     description: 'HexOcean - custom web application company recruitment task',
-    github: 'https://github.com/NorbertBaran/hex-ocean-dishses',
-    preview: 'http://3.68.78.96/hex-ocean-dishes/'
+    github: 'https://github.com/NorbertBaran/hex-ocean-dishes',
+    preview: 'http://quecto.pl/hex-ocean-dishes/'
 }]
 
 const PaperRepository = ({ repository }) => {
@@ -84,7 +84,7 @@ const Repositories = () => {
     return (
         <Grid id='projects' container height='100vh' direction='column' justifyContent='center'>
             <Title>PROJECTS</Title>
-            <Slider shift={135}>
+            <Slider shift={270}>
                 {repositories.map(repository =>
                     <Repository repository={repository} />
                 )}

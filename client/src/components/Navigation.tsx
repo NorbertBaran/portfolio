@@ -55,7 +55,6 @@ const Navigation = () => {
                             <NavLink label='Skills' href='#skills'/>
                             <NavLink label='Experience' href='#experience'/>
                             <NavLink label='Projects' href='#projects'/>
-                            <NavLink label='Contact' href='#contact'/>
                         </Toolbar>
                     </Container>
                 </AppBar>

@@ -1,8 +1,9 @@
 import { Container, ThemeProvider, createTheme } from "@mui/material";
 import { indigo } from "@mui/material/colors";
-import { Footer, Navigation } from "./components";
-import { Contact, Home, Qualification, Skills } from "./views";
+import { Navigation } from "./components";
+import { Home, Qualification, Skills } from "./views";
 import Repositories from "./views/Projects";
+import { FullPage, Slide } from 'react-full-page';
 
 
 function App() {
@@ -15,13 +16,21 @@ function App() {
     return (
         <ThemeProvider theme={theme}>
             <Container maxWidth='md'>
-                <Navigation/>
-                <Home />
-                <Skills />
-                <Qualification />
-                <Repositories />
-                <Contact />
-                <Footer />
+                <FullPage controls>
+                    <Navigation />
+                    <Slide>
+                        <Home />
+                    </Slide>
+                    <Slide>
+                        <Skills />
+                    </Slide>
+                    <Slide>
+                        <Qualification />
+                    </Slide>
+                    <Slide>
+                        <Repositories />
+                    </Slide>
+                </FullPage>
             </Container>
         </ThemeProvider>
     )
