@@ -71,7 +71,7 @@ const RepositoryTile: FC<IRepositoryTile> = ({ repository }) => {
             <CardActions>
                 <Box width='100%' display='flex' justifyContent='center'>
                     <Button href={repository.github} target="_blank">GitHub</Button>
-                    <Button href={repository.preview != undefined ? repository.preview : ''} target="_blank" disabled={repository.preview != undefined}>Preview</Button>
+                    <Button href={repository.preview != undefined ? repository.preview : ''} target="_blank" disabled={repository.preview == undefined}>Preview</Button>
                 </Box>
             </CardActions>
         </Card>
