@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Step, StepLabel, Stepper, Typography } from "@mui/material";
+import { Box, Grid, Step, StepLabel, Stepper, Typography } from "@mui/material";
 import Title from "../components/Title";
 
 const steps = [
@@ -22,11 +22,11 @@ const Experience = () => {
         <Box id='experience' height='100vh' display='flex' flexDirection='column' justifyContent='center'>
             <Grid container display='flex' justifyContent='center'>
                 <Grid xs={12}>
-                    <Title>EXPERIENCE</Title>
+                    <Title><>EXPERIENCE</></Title>
                 </Grid>
                 <Grid maxWidth='sm'>
                     <Stepper activeStep={2} orientation="vertical">
-                        {steps.map((step, index) => (
+                        {steps.map((step) => (
                             <Step key={step.label}>
                                 <StepLabel>
                                     <Typography variant="subtitle1" fontWeight={500}>{step.label}</Typography>

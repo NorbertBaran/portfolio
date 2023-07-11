@@ -1,8 +1,18 @@
-import { Avatar, Box, Button, Card, CardActions, CardContent, CardHeader, Grid, Link, Paper, Typography } from "@mui/material";
+import { Avatar, Box, Button, Card, CardActions, CardContent, CardHeader, Grid, Typography } from "@mui/material";
+import { FC } from "react";
 import { Slider } from "../components";
 import Title from "../components/Title";
 
-const repositories = [{
+interface IRepository {
+    color: string | undefined
+    name: string
+    language: string
+    description: string
+    github: string
+    preview: string | undefined
+}
+
+const repositories: IRepository[] = [{
     name: 'Speaker',
     language: 'React + FastAPI',
     color: '#3F51B5',
@@ -15,10 +25,11 @@ const repositories = [{
     color: '#4CAF50',
     description: 'Command line tool providing a user-friendly interface for managing repositories',
     github: 'https://github.com/NorbertBaran/github-manager',
-    preview: null
+    preview: undefined
 }, {
     name: 'React Components',
     language: 'React',
+    color: undefined,
     description: 'React library providing reusable UI components',
     github: 'https://github.com/NorbertBaran/react-components',
     preview: 'https://64392804afb9b6dfbc9a51b0-omcshwwuql.chromatic.com/?path=/docs/navbar--docs'
@@ -38,24 +49,11 @@ const repositories = [{
     preview: 'http://quecto.pl/hex-ocean-dishes/'
 }]
 
-const PaperRepository = ({ repository }) => {
-    return (
-        <Paper
-            key={repository.name}
-            sx={{
-                width: '200px',
-                height: '250px',
-                bgcolor: repository.color
-            }}
-        >
-            <Typography variant="subtitle1" align="center">{repository.name}</Typography>
-            <Button disabled={!repository.preview}>Preview</Button>
-            <Button>GitHub</Button>
-        </Paper>
-    )
+interface IRepositoryTile {
+    repository: IRepository
 }
 
-const Repository = ({ repository }) => {
+const RepositoryTile: FC<IRepositoryTile> = ({ repository }) => {
     return (
         <Card variant="outlined" sx={{ width: '250px'}}>
             <CardHeader
@@ -73,7 +71,7 @@ const Repository = ({ repository }) => {
             <CardActions>
                 <Box width='100%' display='flex' justifyContent='center'>
                     <Button href={repository.github} target="_blank">GitHub</Button>
-                    <Button href={repository.preview} target="_blank" disabled={!repository.preview}>Preview</Button>
+                    <Button href={repository.preview != undefined ? repository.preview : ''} target="_blank" disabled={repository.preview != undefined}>Preview</Button>
                 </Box>
             </CardActions>
         </Card>
@@ -83,10 +81,10 @@ const Repository = ({ repository }) => {
 const Repositories = () => {
     return (
         <Grid id='projects' container height='100vh' direction='column' justifyContent='center'>
-            <Title>PROJECTS</Title>
+            <Title><>PROJECTS</></Title>
             <Slider shift={270}>
                 {repositories.map(repository =>
-                    <Repository repository={repository} />
+                    <RepositoryTile repository={repository} />
                 )}
             </Slider>
         </Grid>

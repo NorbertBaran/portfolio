@@ -1,8 +1,13 @@
 import { ArrowCircleLeft, ArrowCircleRight } from "@mui/icons-material";
-import { Box, Button, Paper } from "@mui/material";
-import { useRef } from "react";
+import { Box } from "@mui/material";
+import { FC, useRef } from "react";
 
-const Slider = ({shift, children }) => {
+interface ISlider {
+    shift: number
+    children: React.ReactElement[]
+}
+
+const Slider: FC<ISlider> = ({shift, children }) => {
     const sliderRef = useRef<HTMLDivElement>(null);
     const left = () => {
         if (sliderRef.current) {

@@ -7,9 +7,14 @@ import {
     useScrollTrigger,
     useTheme
 } from "@mui/material";
-import {cloneElement} from "react";
+import { FC, cloneElement } from "react";
 
-const NavLink = ({label, href}) => {
+interface INavLink {
+    label: string
+    href: string
+}
+
+const NavLink: FC<INavLink> = ({label, href}) => {
     const theme = useTheme()
     return(
         <Link
@@ -30,7 +35,11 @@ const NavLink = ({label, href}) => {
     )
 }
 
-function ElevationScroll({children}) {
+interface IElevationScroll {
+    children: React.ReactElement
+}
+
+const ElevationScroll: FC<IElevationScroll> = ({children}) => {
     const trigger = useScrollTrigger();
 
     return cloneElement(children, {
