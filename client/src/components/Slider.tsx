@@ -7,7 +7,7 @@ interface ISlider {
     children: React.ReactElement[]
 }
 
-const Slider: FC<ISlider> = ({shift, children }) => {
+const Slider: FC<ISlider> = ({ shift, children }) => {
     const sliderRef = useRef<HTMLDivElement>(null);
     const left = () => {
         if (sliderRef.current) {
@@ -24,32 +24,34 @@ const Slider: FC<ISlider> = ({shift, children }) => {
     }
 
     return (
-        <Box maxWidth='md' display='flex' alignItems='center'>
-            <ArrowCircleLeft
-                fontSize="large"
-                color="primary"
-                cursor='pointer'
-                onClick={left}
-                sx={{margin: '15px'}}
-            />
-            <Box
-                ref={sliderRef}
-                overflow='hidden'
-                whiteSpace='nowrap'
-            >
-                {children.map(child =>
-                    <Box display='inline-block' marginRight='20px' whiteSpace='normal'>
-                        {child}
-                    </Box>)}
+        <>
+            <Box maxWidth='md' display='flex' justifyContent='center'>
+                <Box
+                    ref={sliderRef}
+                    overflow='hidden'
+                    whiteSpace='nowrap'
+                >
+                    {children.map(child =>
+                        <Box display='inline-block' marginRight='20px' whiteSpace='normal'>
+                            {child}
+                        </Box>)}
+                </Box>
             </Box>
-            <ArrowCircleRight
-                fontSize="large"
-                color="primary"
-                cursor="pointer"
-                onClick={right}
-                sx={{margin: '15px'}}
-            />
-        </Box>
+            <Box maxWidth='md' display='flex' justifyContent='center'>
+                <ArrowCircleLeft
+                    color="primary"
+                    cursor='pointer'
+                    onClick={left}
+                    sx={{padding: '15px', margin: '15px', fontSize: '46px' }}
+                />
+                <ArrowCircleRight
+                    color="primary"
+                    cursor="pointer"
+                    onClick={right}
+                    sx={{padding: '15px', margin: '15px', fontSize: '46px' }}
+                />
+            </Box>
+        </>
     )
 }
 

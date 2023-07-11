@@ -10,11 +10,16 @@ body{
   scroll-snap-type: y mandatory;
 }
 
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 .section {
-  height: 100vh;
   scroll-snap-align: start;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid #ccc;
 }
